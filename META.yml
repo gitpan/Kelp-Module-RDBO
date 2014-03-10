@@ -3,29 +3,29 @@ abstract: 'Kelp interface to Rose::DB::Object'
 author:
   - 'Stefan Geneshky <minimal@cpan.org>'
 build_requires:
-  DBD::SQLite: 0
-  File::Temp: 0
-  Rose::DB::Object::Helpers: 0
-  Test::More: 0
-  lib: 0
+  DBD::SQLite: '0'
+  File::Temp: '0'
+  Rose::DB::Object::Helpers: '0'
+  Test::More: '0'
+  lib: '0'
 configure_requires:
-  ExtUtils::MakeMaker: 6.30
+  ExtUtils::MakeMaker: '6.30'
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.300035, CPAN::Meta::Converter version 2.120921'
+generated_by: 'Dist::Zilla version 5.013, CPAN::Meta::Converter version 2.133380'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
-  version: 1.4
+  version: '1.4'
 name: Kelp-Module-RDBO
 requires:
-  Class::Inspector: 0
-  Kelp::Base: 0
-  Module::Find: 0
-  Plack::Util: 0
-  Rose::DB: 0
-  Rose::DB::Object: 0
-  strict: 0
+  Class::Inspector: '0'
+  Kelp::Base: '0'
+  Module::Find: '0'
+  Plack::Util: '0'
+  Rose::DB: '0'
+  Rose::DB::Object: '0'
+  strict: '0'
 resources:
   homepage: https://github.com/naturalist/kelp-module-rdbo
   repository: https://github.com/naturalist/kelp-module-rdbo.git
-version: 0.105
+version: '0.106'

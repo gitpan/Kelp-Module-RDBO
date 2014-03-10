@@ -6,7 +6,7 @@ use Plack::Util;
 use Class::Inspector;
 use Module::Find;
 
-our $VERSION = 0.105;
+our $VERSION = 0.106;
 
 sub build {
     my ( $self, %args ) = @_;
@@ -61,7 +61,7 @@ __END__
 
 =pod
 
-=head1 TITLE
+=head1 NAME
 
 Kelp::Module::RDBO - Kelp interface to Rose::DB::Object
 
