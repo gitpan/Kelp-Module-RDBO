@@ -7,12 +7,20 @@ SYNOPSIS
             modules      => [qw/RDBO/],
             modules_init => {
                 RDBO => {
-                    prefix       => 'MyApp::DB',
-                    default_type => 'main',
-                    source       => [
+                    prefix         => 'MyApp::DB',
+                    default_domain => 'development',
+                    default_type   => 'main',
+                    source         => [
                         {
-                            type     => 'main',
-                            driver   => 'mysql',
+                            domain => 'development',
+                            type   => 'main',
+                            driver => 'mysql',
+                            ...
+                        },
+                        {
+                            domain => 'development',
+                            type   => 'readonly',
+                            driver => 'mysql',
                             ...
                         }
                     ],
@@ -42,9 +50,14 @@ REGISTERED METHODS
     This module registers the following methods into your application:
 
   rdb
-    A reference to an initialized Rose::DB database object.
+    A reference to the default Rose::DB database object.
 
         $self->rdb->do_transaction(sub{ ... });
+
+    To access a database of different type or domain, use parameters:
+
+        my $db = $self->rdb( domain => 'production', type => 'readonly' );
+        $db->do_transaction( sub { ... } );
 
   rdbo
     A helper method, which prepares and returns a Rose::DB::Object child
@@ -73,6 +86,12 @@ REGISTERED METHODS
     If the "db" parameter is missing, RDBO will look for an "init_db"
     method. The "rdbo" method described here initializes that behind the
     scenes, so you don't have to worry about any of the above.
+
+    To access a database of different type or domain, use parameters:
+
+        my $author = $self->rdbo('Author', type => 'readonly')
+                          ->new( id => $author_id )
+                          ->load;
 
 CONFIGURATION
     The configuration of this module is very robust, and as such it may seem
